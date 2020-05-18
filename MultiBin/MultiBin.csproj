@@ -89,12 +89,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Work.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\25-Awesome-Nexus-5-Wallpapers-9.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\file.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
