@@ -47,11 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bin.cs" />
-    <Compile Include="FileItem.cs">
+    <Compile Include="TextItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FileItem.Designer.cs">
-      <DependentUpon>FileItem.cs</DependentUpon>
+    <Compile Include="TextItem.Designer.cs">
+      <DependentUpon>TextItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageItem.Designer.cs">
+      <DependentUpon>ImageItem.cs</DependentUpon>
     </Compile>
     <Compile Include="MultiBin.cs">
       <SubType>Form</SubType>
@@ -62,8 +68,11 @@
     <Compile Include="KeyboardEvents.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FileItem.resx">
-      <DependentUpon>FileItem.cs</DependentUpon>
+    <EmbeddedResource Include="TextItem.resx">
+      <DependentUpon>TextItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageItem.resx">
+      <DependentUpon>ImageItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MultiBin.resx">
       <DependentUpon>MultiBin.cs</DependentUpon>

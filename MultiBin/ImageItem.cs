@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace MultiBin
 {
-    public partial class FileItem : UserControl
+    public partial class ImageItem : UserControl
     {
-        public FileItem()
+        public ImageItem()
         {
             InitializeComponent();
         }
