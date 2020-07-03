@@ -18,7 +18,7 @@ namespace MultiBin
 
         private void textArea_ContentsResized(object sender, ContentsResizedEventArgs e)
         {
-            ((RichTextBox)sender).Height = e.NewRectangle.Height + 5;
+            //((RichTextBox)sender).Height = e.NewRectangle.Height + 5;
         }
     }
 }

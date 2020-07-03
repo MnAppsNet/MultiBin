@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3A73E9D9-01B8-4D7D-87D0-47E42E0C109E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>MultiBin</RootNamespace>
     <AssemblyName>MultiBin</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>

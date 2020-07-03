@@ -15,7 +15,7 @@ namespace MultiBin
     {
         //Data formarts used to handle the clipboard data objects internaly. Clipboard objects are converted to those formats for internal use
         public static string[] DataFormatIdentifiers = {    //Identifier in IDataObject.GetFormats() | Property in DataFormats if they are different
-            "Rich Text Format",
+            //"Rich Text Format",
             "UnicodeText",
             "Bitmap",
             "FileDrop"
@@ -52,6 +52,14 @@ namespace MultiBin
                 Bitmap btm = (Bitmap)data;
                 int bytes = btm.Width * btm.Height * (Image.GetPixelFormatSize(btm.PixelFormat) / 8);
                 id = bytes.ToString() + btm.PixelFormat.ToString() + btm.VerticalResolution.ToString() + btm.Width.ToString() + btm.Height.ToString();
+            }
+            else if(type == "FileDrop")
+            {
+                string[] files = (string[])data;
+                foreach(string s in files)
+                {
+                    id += s;
+                }
             }
             else
             {
@@ -91,30 +99,33 @@ namespace MultiBin
                 catch { }
             }
 
-            private void updateBinFromClipboard()
+        private void updateBinFromClipboard()
+        {
+            try
             {
-                try
+                while (true)
                 {
-                    while (true)
+                    if (Thread.CurrentThread.ThreadState == ThreadState.Aborted || Thread.CurrentThread.ThreadState == ThreadState.AbortRequested || Thread.CurrentThread.ThreadState == ThreadState.Stopped || Thread.CurrentThread.ThreadState == ThreadState.StopRequested || Thread.CurrentThread.ThreadState == ThreadState.Suspended || Thread.CurrentThread.ThreadState == ThreadState.SuspendRequested)
                     {
-                        if (Thread.CurrentThread.ThreadState == ThreadState.Aborted || Thread.CurrentThread.ThreadState == ThreadState.AbortRequested || Thread.CurrentThread.ThreadState == ThreadState.Stopped || Thread.CurrentThread.ThreadState == ThreadState.StopRequested || Thread.CurrentThread.ThreadState == ThreadState.Suspended || Thread.CurrentThread.ThreadState == ThreadState.SuspendRequested)
-                        {
-                            break;
-                        }
-                        IDataObject dataObject = null;
-                        parent.Invoke((MethodInvoker)delegate
-                        {
-                            dataObject = Clipboard.GetDataObject();
-                        });
-                        if (dataObject != null)
-                        {
-                            addItem(dataObject);
-                        }
-                        Thread.Sleep(1000); //Wait 1 second
+                        break;
                     }
+                    IDataObject dataObject = null;
+                    parent.Invoke((MethodInvoker)delegate
+                    {
+                        dataObject = Clipboard.GetDataObject();
+                    });
+                    if (dataObject != null)
+                    {
+                        addItem(dataObject);
+                    }
+                    Thread.Sleep(2000); //Wait 2 second
                 }
-                catch { }
             }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
 
             private void addItem(IDataObject Data)
             {
