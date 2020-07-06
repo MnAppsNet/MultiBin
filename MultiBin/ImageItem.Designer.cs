@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.item = new System.Windows.Forms.Panel();
-            this.image = new System.Windows.Forms.PictureBox();
             this.fileName = new System.Windows.Forms.TextBox();
+            this.image = new System.Windows.Forms.PictureBox();
             this.item.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
             this.SuspendLayout();
@@ -47,18 +47,6 @@
             this.item.Size = new System.Drawing.Size(364, 200);
             this.item.TabIndex = 3;
             // 
-            // image
-            // 
-            this.image.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.image.Image = global::MultiBin.Properties.Resources.file;
-            this.image.Location = new System.Drawing.Point(0, 0);
-            this.image.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.image.Name = "image";
-            this.image.Size = new System.Drawing.Size(364, 174);
-            this.image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.image.TabIndex = 0;
-            this.image.TabStop = false;
-            // 
             // fileName
             // 
             this.fileName.BackColor = System.Drawing.Color.Black;
@@ -72,12 +60,25 @@
             this.fileName.TabIndex = 2;
             this.fileName.Text = "icon.png";
             this.fileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.fileName.CursorChanged += new System.EventHandler(this.fileName_CursorChanged);
+            // 
+            // image
+            // 
+            this.image.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.image.Image = global::MultiBin.Properties.Resources.file;
+            this.image.Location = new System.Drawing.Point(0, 0);
+            this.image.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.image.Name = "image";
+            this.image.Size = new System.Drawing.Size(364, 174);
+            this.image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.image.TabIndex = 0;
+            this.image.TabStop = false;
             // 
             // ImageItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.item);
             this.Cursor = System.Windows.Forms.Cursors.Hand;

@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Reflection;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -22,20 +23,26 @@ namespace MultiBin
         };
 
         //Constructor to initialise item data :
-        public Item(object DataObject, string DataType, IDataObject ClipboardObject)
+        public Item(object DataObject, string DataType, IDataObject ClipboardObject, bool Pinned = false)
         {
             data = DataObject;
             type = DataType;
             clipboardObject = ClipboardObject;
             id = calculate_id(DataType, DataObject);
+            pinned = Pinned;
         }
 
         //Seters & Geters :
         public string ID { get { return id; } }
         public object Data { get { return data; } }
         public string Type { get { return type; } }
+        public bool IsPinned { get { return pinned; } }
         public Control Control { get { return control; } set { control = value; } }
         public IDataObject ClipboardObject { get { return clipboardObject; } }
+        public void SetPinned(bool pin = true)
+        {
+            pinned = pin;
+        }
 
         //Private variables storing all needed data :
         private string id;                   // Item identified
@@ -43,7 +50,7 @@ namespace MultiBin
         private string type;                 // The type of the "data" variable (from DataFormats class)
         private IDataObject clipboardObject; //Original clipboard object, stored so it can be set back to clipboard again
         private Control control;             //The graphical control that handles the item
-
+        private bool pinned;                 //Determins if the item is pinned to the top or not
         public static string calculate_id(string type, object data)
         {
             string id = "";

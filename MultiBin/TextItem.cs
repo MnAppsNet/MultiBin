@@ -20,5 +20,10 @@ namespace MultiBin
         {
             //((RichTextBox)sender).Height = e.NewRectangle.Height + 5;
         }
+
+        private void textArea_CursorChanged(object sender, EventArgs e)
+        {
+            textArea.Select(0, 0);
+        }
     }
 }

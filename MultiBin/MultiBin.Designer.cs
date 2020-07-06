@@ -37,6 +37,7 @@
             // main_panel
             // 
             this.main_panel.AutoScroll = true;
+            this.main_panel.BackgroundImage = global::MultiBin.Properties.Resources.img1;
             this.main_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.main_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.main_panel.Location = new System.Drawing.Point(0, 0);
@@ -49,10 +50,13 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label1.Location = new System.Drawing.Point(365, 248);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(362, 243);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 25);
+            this.label1.Size = new System.Drawing.Size(41, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "::..";
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
@@ -69,6 +73,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::MultiBin.Properties.Resources.img1;
             this.ClientSize = new System.Drawing.Size(408, 277);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.main_panel);

@@ -56,6 +56,7 @@
             this.textArea.TabIndex = 0;
             this.textArea.Text = "";
             this.textArea.ContentsResized += new System.Windows.Forms.ContentsResizedEventHandler(this.textArea_ContentsResized);
+            this.textArea.CursorChanged += new System.EventHandler(this.textArea_CursorChanged);
             // 
             // TextItem
             // 
@@ -63,7 +64,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.item);
             this.ForeColor = System.Drawing.Color.White;
